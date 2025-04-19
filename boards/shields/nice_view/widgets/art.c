@@ -228,11 +228,11 @@ const lv_img_dsc_t mountain = {
     .data = mountain_map,
 };
 
-#ifndef LV_ATTRIBUTE_IMG_UNTITLED
-#define LV_ATTRIBUTE_IMG_UNTITLED
+#ifndef LV_ATTRIBUTE_IMG_POWERLINE
+#define LV_ATTRIBUTE_IMG_POWERLINE
 #endif
 
-const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_UNTITLED uint8_t Untitled_map[] = {
+const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_POWERLINE uint8_t powerline_map[] = {
 #if CONFIG_NICE_VIEW_WIDGET_INVERTED
         0x00, 0x00, 0x00, 0xff, /*Color of index 0*/
         0xff, 0xff, 0xff, 0xff, /*Color of index 1*/
@@ -311,13 +311,13 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_UNTITLED 
   0xff, 0xff, 0xff, 0xef, 0xff, 0xff, 0xef, 0x7f, 0x7f, 0xfb, 0xfe, 0xfd, 0xbf, 0xf9, 0xff, 0xff, 0xff, 0xf0, 
 };
 
-const lv_img_dsc_t Untitled = {
+const lv_img_dsc_t powerline = {
   .header.cf = LV_IMG_CF_INDEXED_1BIT,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
-  .data = Untitled_map,
+  .data = powerline_map,
 };
 
