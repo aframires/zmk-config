@@ -16,6 +16,7 @@ manifest:
     - name: nice-view-mod
       remote: aframires
       revision: main
+      path: nice-view-mod
     #- name: nice-view-gem #new entry
     #  remote: m165437 #new entry
     #  revision: main #new entry
