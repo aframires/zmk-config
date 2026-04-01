@@ -14,9 +14,9 @@
 struct zmk_widget_status {
     sys_snode_t node;
     lv_obj_t *obj;
-    uint8_t cbuf[CANVAS_BUF_SIZE];
-    uint8_t cbuf2[CANVAS_BUF_SIZE];
-    uint8_t cbuf3[CANVAS_BUF_SIZE];
+    uint8_t cbuf[CANVAS_BUF_SIZE] __aligned(LV_DRAW_BUF_ALIGN);
+    uint8_t cbuf2[CANVAS_BUF_SIZE] __aligned(LV_DRAW_BUF_ALIGN);
+    uint8_t cbuf3[CANVAS_BUF_SIZE] __aligned(LV_DRAW_BUF_ALIGN);
     struct status_state state;
 };
 

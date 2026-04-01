@@ -11,13 +11,15 @@
 LV_IMG_DECLARE(bolt);
 
 void rotate_canvas(lv_obj_t *canvas) {
-    uint8_t *buf = lv_canvas_get_draw_buf(canvas)->data;
-    static uint8_t buf_copy[CANVAS_BUF_SIZE];
+    lv_draw_buf_t *draw_buf = lv_canvas_get_draw_buf(canvas);
+    uint8_t *buf = draw_buf->data;
+    static uint8_t buf_copy[CANVAS_BUF_SIZE] __aligned(LV_DRAW_BUF_ALIGN);
     memcpy(buf_copy, buf, sizeof(buf_copy));
 
-    const uint32_t stride = lv_draw_buf_width_to_stride(CANVAS_SIZE, CANVAS_COLOR_FORMAT);
+    const uint32_t stride = draw_buf->header.stride;
     lv_draw_sw_rotate(buf_copy, buf, CANVAS_SIZE, CANVAS_SIZE, stride, stride,
                       LV_DISPLAY_ROTATION_270, CANVAS_COLOR_FORMAT);
+    lv_obj_invalidate(canvas);
 }
 
 void draw_battery(lv_obj_t *canvas, const struct status_state *state) {
