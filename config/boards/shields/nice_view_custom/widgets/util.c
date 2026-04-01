@@ -11,6 +11,8 @@
 LV_IMG_DECLARE(bolt);
 
 void rotate_canvas(lv_obj_t *canvas) {
+    lv_draw_wait_for_finish();
+
     lv_draw_buf_t *draw_buf = lv_canvas_get_draw_buf(canvas);
     uint8_t *buf = draw_buf->data;
     static uint8_t buf_copy[CANVAS_BUF_SIZE] __aligned(LV_DRAW_BUF_ALIGN);
